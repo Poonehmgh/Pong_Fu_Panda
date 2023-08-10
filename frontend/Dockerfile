@@ -1,7 +1,7 @@
 FROM node:latest
 WORKDIR  /frontend
 
-COPY package*.json ./
+COPY frontend/package*.json ./
 
 RUN npm install -g npm@latest
 
@@ -9,8 +9,6 @@ RUN npm install
 
 COPY . .
 
-#RUN npm run build
+EXPOSE 5173
 
-EXPOSE 5174
-
-CMD ["npm", "run", "build"]
+CMD ["npm", "run", "dev"]
